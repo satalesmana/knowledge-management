@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'knowledge-mangement';
+  isCollapsed = false;
+  title:String;
+
+  constructor(){
+    this.title = 'KM App'
+  }
 }
