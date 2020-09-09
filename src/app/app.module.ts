@@ -18,11 +18,16 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { CommonModule } from "@angular/common";
 import { MemberComponent } from './pages/member/member.component';
+import { NzDrawerModule } from 'ng-zorro-antd/drawer';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzInputModule } from 'ng-zorro-antd/input';
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
+    //FormsModule,
     AppComponent,
     MemberComponent
   ],
@@ -31,14 +36,18 @@ registerLocaleData(en);
     BrowserModule,
     AppRoutingModule,
     IconsProviderModule,
-    NzLayoutModule,
-    NzMenuModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     NzTableModule,
     NzButtonModule,
-    NzPopconfirmModule
+    NzPopconfirmModule,
+    NzDrawerModule,
+    NzFormModule,
+    NzIconModule,
+    NzInputModule,
+    NzLayoutModule,
+    NzMenuModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
