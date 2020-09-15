@@ -1,6 +1,14 @@
-<button nz-button nzType="primary" (click)="onAddNew()">Add New Member</button>
-
-<nz-table #basicTable [nzData]="listOfData">
+<button nz-button nzType="primary" (click)="onLoadData()">
+    <i nz-icon nzType="redo" nzTheme="outline"></i> Reload
+</button>
+&nbsp;
+<button nz-button nzType="primary" (click)="onAddNew()">
+  <i nz-icon nzType="plus-circle" nzTheme="outline"></i>
+  Add New Member
+</button>
+<br>
+<br>&nbsp;
+<nz-table #basicTable [nzLoading]="loadingTbl" [nzData]="listOfData">
     <thead>
       <tr>
         <th>Name</th>
