@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {MemberService} from '../../services/member.service'
 
 interface Member {
-  key: string;
+  id: string;
   name: string;
   age: number;
   address: string;
@@ -18,7 +18,7 @@ export class MemberComponent {
   public visible:boolean=false
   public loadingTbl:boolean= false;
   public fMember:any={
-    key:'',
+    id:'',
     name:'',
     emial:'',
     address:''
@@ -34,23 +34,41 @@ export class MemberComponent {
   }
 
   onSaveData():void{
-    this.sc.add({
-        name: this.fMember.name,
-        age: this.fMember.age,
-        address: this.fMember.address
-    }).subscribe((output:any) => {
-      alert(output.message)
-      this.onClose()      
-    });
+    if(this.fMember.id !=''){
+      this.sc.update({
+          id: this.fMember.id,
+          name: this.fMember.name,
+          age: this.fMember.age,
+          address: this.fMember.address
+      }).subscribe((output:any) => {
+        alert(output.message)
+        this.onClose()  
+        this.onLoadData()    
+      });
+    }else{
+      this.sc.add({
+          name: this.fMember.name,
+          age: this.fMember.age,
+          address: this.fMember.address
+      }).subscribe((output:any) => {
+        alert(output.message)
+        this.onClose()      
+      });
+    }
+    
   }
 
-  deleteRow(deletedKey: string): void {
-    this.listOfData = this.listOfData.filter(d => d.key !== deletedKey);
+  deleteRow(deletedKey: any): void {
+    this.sc.delete({id:deletedKey.id}).subscribe((output:any) => {
+      alert(output.message)
+
+      this.onLoadData()
+    });
   }
   
   onClose():void{
     this.visible = false
-    this.fMember.key=''
+    this.fMember.id=''
     this.fMember.name=''
     this.fMember.age=''
     this.fMember.address=''
@@ -61,6 +79,21 @@ export class MemberComponent {
     this.sc.list().subscribe((output:any) => {
       this.listOfData = output;
       this.loadingTbl = false
+    });
+  }
+
+  onEdit(data:any){
+    this.visible = true
+    this.fMember.id=data.id
+    this.fMember.name=data.name
+    this.fMember.age=data.age
+    this.fMember.address=data.address
+  }
+
+  onEditProses(){
+    this.sc.update(this.fMember).subscribe((output:any) => {
+      alert(output.message)
+      this.onLoadData()
     });
   }
 

@@ -36,4 +36,26 @@ export class MemberService {
 	       
 	  });
   }
+
+  public delete(data:any):Observable<any> {
+	  return Observable.create(observer => {
+      this.http.post(this.baseUrl+'delete/member', JSON.stringify(data))
+        .subscribe((respond:any) => {
+          observer.next(respond);
+          observer.complete();
+        return {unsubcribe() {respond}};
+	    });
+	  });
+  }
+
+  public update(data:any):Observable<any> {
+	  return Observable.create(observer => {
+      this.http.post(this.baseUrl+'update/member', JSON.stringify(data))
+        .subscribe((respond:any) => {
+          observer.next(respond);
+          observer.complete();
+        return {unsubcribe() {respond}};
+	    });
+	  });
+  }
 }
