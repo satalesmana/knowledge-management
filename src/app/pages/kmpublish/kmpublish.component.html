@@ -1,0 +1,25 @@
+<button nz-button (click)="onLoadData()" nzType="danger" > Reload </button><br>
+
+<nz-table #basicTable [nzLoading]="loadingTbl" 
+  [nzPageSize]="10" [nzScroll]="{ y: '300px' }"
+  [nzData]="listArtickel">
+    <thead>
+      <tr>
+        <th>NO</th>
+        <th>Title</th>
+        <th>Knowledge</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.id }}</td>
+        <td>{{ data.title }}</td>
+        <td>{{ data.text }}</td>
+        <td nzRight>
+          <!-- <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data)">Delete</a>
+          | <a (click)="onEdit(data)">Edit</a> -->
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>

@@ -9,7 +9,8 @@ export class MemberService {
   public baseUrl:string;
 
   constructor(private http:HttpClient) {
-    this.baseUrl = 'https://satalesmana.000webhostapp.com/res/index.php/api/'
+    //this.baseUrl = 'https://satalesmana.000webhostapp.com/res/index.php/api/'
+    this.baseUrl = 'http://localhost/kmlp3iapi/index.php/api/'
   }
 
   public list():Observable<any> {

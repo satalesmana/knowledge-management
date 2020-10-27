@@ -12,15 +12,29 @@
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+      <li nz-submenu  nzTitle="Dashboard" nzIcon="dashboard">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/welcome">Dashboard</a>
           </li>
         </ul>
       </li>
-     
-      <li nz-submenu nzOpen nzTitle="Master Data" nzIcon="form">
+      
+      <li nz-submenu nzTitle="Knowledge" nzIcon="form">
+        <ul>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/kmform">Form Knowledge</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/kmpublish">Publish</a>
+          </li>
+          <li nz-menu-item nzMatchRouter>
+            <a routerLink="/kmunpublish">Un Publish</a>
+          </li>
+        </ul>
+      </li>
+
+      <li nz-submenu  nzTitle="Master Data" nzIcon="form">
         <ul>
           <li nz-menu-item nzMatchRouter>
             <a routerLink="/member">Member</a>

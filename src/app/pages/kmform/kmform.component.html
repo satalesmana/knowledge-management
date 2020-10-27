@@ -1,0 +1,27 @@
+<form nz-form [nzLayout]="'horizontal'">
+    <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="name">Title</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" [(ngModel)]="fKnowledge.title" nz-input name="title" placeholder="Enter Title" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item >
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="name">Text</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <div [froalaEditor] [(froalaModel)]="fKnowledge.text"></div>
+            <!-- <input type="text" [(ngModel)]="fKnowledge.text" nz-input name="Text" placeholder="Enter Text" /> -->
+        </nz-form-control>
+      </nz-form-item >
+
+      <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="name">Action</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+          <button nz-button (click)="onSaveData()" nzType="primary" > Save Knowledge </button>
+          &nbsp; <button nz-button (click)="onCancel()" nzType="danger" > Cancel </button>
+        </nz-form-control>
+      </nz-form-item >
+      
+</form>

@@ -22,6 +22,10 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { NzInputModule } from 'ng-zorro-antd/input';
+import { KmformComponent } from './pages/kmform/kmform.component';
+import { KmpublishComponent } from './pages/kmpublish/kmpublish.component';
+import { KmunpublishComponent } from './pages/kmunpublish/kmunpublish.component';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 registerLocaleData(en);
 
@@ -29,7 +33,10 @@ registerLocaleData(en);
   declarations: [
     //FormsModule,
     AppComponent,
-    MemberComponent
+    MemberComponent,
+    KmformComponent,
+    KmpublishComponent,
+    KmunpublishComponent
   ],
   imports: [
     CommonModule,
@@ -48,6 +55,8 @@ registerLocaleData(en);
     NzInputModule,
     NzLayoutModule,
     NzMenuModule,
+    FroalaEditorModule.forRoot(), 
+    FroalaViewModule.forRoot()
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
