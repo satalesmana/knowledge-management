@@ -17,9 +17,19 @@
         <td>{{ data.title }}</td>
         <td>{{ data.text }}</td>
         <td nzRight>
-          <!-- <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data)">Delete</a>
-          | <a (click)="onEdit(data)">Edit</a> -->
+          <a nz-popconfirm nzPopconfirmTitle="Sure to nonaktive?" (nzOnConfirm)="onSetNonaktif(data)">Set Non aktif</a>
+          | <a (click)="onEdit(data)">Edit</a>
         </td>
       </tr>
     </tbody>
   </nz-table>
+
+  <nz-drawer 
+    [nzClosable]="true" 
+    [nzVisible]="display_form"
+    nzPlacement="right" 
+    [nzWidth]="700"
+    nzTitle="Form Knowledge" 
+    (nzOnClose)="onClose()">
+      <app-kmform [fKnowledge]="data_knowledge" (onCloseForm)="onClose()"></app-kmform>
+  </nz-drawer>

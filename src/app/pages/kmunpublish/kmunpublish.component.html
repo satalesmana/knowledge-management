@@ -17,8 +17,7 @@
         <td>{{ data.title }}</td>
         <td>{{ data.text }}</td>
         <td nzRight>
-          <!-- <a nz-popconfirm nzPopconfirmTitle="Sure to delete?" (nzOnConfirm)="deleteRow(data)">Delete</a>
-          | <a (click)="onEdit(data)">Edit</a> -->
+          <a nz-popconfirm nzPopconfirmTitle="Sure to publish?" (nzOnConfirm)="onSetPublish(data)">Set Publish</a>
         </td>
       </tr>
     </tbody>

@@ -36,4 +36,15 @@ export class ArticleService {
         });  
     });
   }
+
+  public update(data:any):Observable<any> {
+	  return Observable.create(observer => {
+      this.http.post(this.baseUrl+'update/knowledge', JSON.stringify(data))
+        .subscribe((respond:any) => {
+          observer.next(respond);
+          observer.complete();
+        return {unsubcribe() {respond}};
+	    });
+	  });
+  }
 }
