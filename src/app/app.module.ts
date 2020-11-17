@@ -26,6 +26,7 @@ import { KmformComponent } from './pages/kmform/kmform.component';
 import { KmpublishComponent } from './pages/kmpublish/kmpublish.component';
 import { KmunpublishComponent } from './pages/kmunpublish/kmunpublish.component';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { LoginComponent } from './pages/login/login.component';
 
 registerLocaleData(en);
 
@@ -36,7 +37,8 @@ registerLocaleData(en);
     MemberComponent,
     KmformComponent,
     KmpublishComponent,
-    KmunpublishComponent
+    KmunpublishComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,

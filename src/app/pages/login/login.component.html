@@ -1,0 +1,17 @@
+<form nz-form [nzLayout]="'horizontal'">
+    <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="name">Username</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <input type="text" [(ngModel)]="fLogin.username" nz-input name="Username" placeholder="Input Username" />
+        </nz-form-control>
+    </nz-form-item >
+    
+    <nz-form-item>
+        <nz-form-label [nzSpan]="6" nzFor="name">Password</nz-form-label>
+        <nz-form-control [nzSpan]="14">
+            <input type="password" [(ngModel)]="fLogin.password" nz-input name="Passwrod" placeholder="Plaase type Password" />
+        </nz-form-control>
+    </nz-form-item >
+
+    <button nz-button (click)="onCekLogin()" nzType="primary" > Login </button>
+</form>
